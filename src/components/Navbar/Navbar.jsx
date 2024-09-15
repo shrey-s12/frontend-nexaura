@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from '../Assets/logo.png';
-import cart_logo from '../Assets/cart_icon.png';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';  // Import NavLink
+import logo from '../Assets/navbar/logo.png';
+import cart_logo from '../Assets/navbar/cart_icon.png';
 
 const Navbar = () => {
     return (
@@ -11,57 +11,104 @@ const Navbar = () => {
                 <img src={logo} alt="Logo" className="h-10 w-10 object-contain" />
                 <h1 className="text-2xl font-bold">NexAura</h1>
             </div>
+            
+
 
             {/* Navigation links */}
             <ul className="hidden md:flex space-x-6 font-semibold">
                 <li>
-                    <Link
+                    <NavLink
                         to='/'
-                        className="hover:text-gray-300 hover:border-b-2 border-white pb-2 focus:outline-none focus:text-gray-300 focus:border-b-2"
+                        className={({ isActive }) =>
+                            `relative group text-white transition-colors duration-200 ease-in-out ${isActive ? 'text-yellow-400' : ''} hover:underline`
+                        }
                     >
-                        Shop All
-                    </Link>
+                        {({ isActive }) => (
+                            <>
+                                <span className="transition-colors duration-300 ease-in-out">Shop All</span>
+                                <span
+                                    className={`absolute inset-x-0 bottom-0 top-4 h-1 bg-gradient-to-r from-yellow-400 to-transparent transform ${isActive ? 'scale-x-100' : 'scale-x-0'} transition-transform duration-300`}
+                                ></span>
+                            </>
+                        )}
+                    </NavLink>
                 </li>
                 <li>
-                    <Link
-                        to='/'
-                        className="hover:text-gray-300 hover:border-b-2 border-white pb-2 focus:outline-none focus:text-gray-300 focus:border-b-2"
+                    <NavLink
+                        to='/shop-men'
+                        className={({ isActive }) =>
+                            `relative group text-white transition-colors duration-200 ease-in-out ${isActive ? 'text-yellow-400' : ''} hover:underline`
+                        }
                     >
-                        Shop Men
-                    </Link>
+                        {({ isActive }) => (
+                            <>
+                                <span className="transition-colors duration-300 ease-in-out">Shop Men</span>
+                                <span
+                                    className={`absolute inset-x-0 bottom-0 top-4 h-1 bg-gradient-to-r from-yellow-400 to-transparent transform ${isActive ? 'scale-x-100' : 'scale-x-0'} transition-transform duration-300`}
+                                ></span>
+                            </>
+                        )}
+                    </NavLink>
                 </li>
                 <li>
-                    <Link
-                        to='/'
-                        className="hover:text-gray-300 hover:border-b-2 border-white pb-2 focus:outline-none focus:text-gray-300 focus:border-b-2"
+                    <NavLink
+                        to='/shop-women'
+                        className={({ isActive }) =>
+                            `relative group text-white transition-colors duration-200 ease-in-out ${isActive ? 'text-yellow-400' : ''} hover:underline`
+                        }
                     >
-                        Shop Women
-                    </Link>
+                        {({ isActive }) => (
+                            <>
+                                <span className="transition-colors duration-300 ease-in-out">Shop Women</span>
+                                <span
+                                    className={`absolute inset-x-0 bottom-0 top-4 h-1 bg-gradient-to-r from-yellow-400 to-transparent transform ${isActive ? 'scale-x-100' : 'scale-x-0'} transition-transform duration-300`}
+                                ></span>
+                            </>
+                        )}
+                    </NavLink>
                 </li>
                 <li>
-                    <Link
-                        to='/'
-                        className="hover:text-gray-300 hover:border-b-2 border-white pb-2 focus:outline-none focus:text-gray-300 focus:border-b-2"
+                    <NavLink
+                        to='/shop-kids'
+                        className={({ isActive }) =>
+                            `relative group text-white transition-colors duration-200 ease-in-out ${isActive ? 'text-yellow-400' : ''} hover:underline`
+                        }
                     >
-                        Shop Kids
-                    </Link>
+                        {({ isActive }) => (
+                            <>
+                                <span className="transition-colors duration-300 ease-in-out">Shop Kids</span>
+                                <span
+                                    className={`absolute inset-x-0 bottom-0 top-4 h-1 bg-gradient-to-r from-yellow-400 to-transparent transform ${isActive ? 'scale-x-100' : 'scale-x-0'} transition-transform duration-300`}
+                                ></span>
+                            </>
+                        )}
+                    </NavLink>
                 </li>
                 <li>
-                    <Link
-                        to='/'
-                        className="hover:text-gray-300 hover:border-b-2 border-white pb-2 focus:outline-none focus:text-gray-300 focus:border-b-2"
+                    <NavLink
+                        to='/contact'
+                        className={({ isActive }) =>
+                            `relative group text-white transition-colors duration-200 ease-in-out ${isActive ? 'text-yellow-400' : ''} hover:underline`
+                        }
                     >
-                        Contact Us
-                    </Link>
+                        {({ isActive }) => (
+                            <>
+                                <span className="transition-colors duration-300 ease-in-out">Contact Us</span>
+                                <span
+                                    className={`absolute inset-x-0 bottom-0 top-4 h-1 bg-gradient-to-r from-yellow-400 to-transparent transform ${isActive ? 'scale-x-100' : 'scale-x-0'} transition-transform duration-300`}
+                                ></span>
+                            </>
+                        )}
+                    </NavLink>
                 </li>
             </ul>
 
             {/* Actions: Login, Sign Up, Cart */}
             <div className="flex items-center space-x-4">
-                <button className="px-4 py-2 bg-transparent border border-white rounded-md hover:bg-white hover:text-slate-800 transition duration-200">
+                <button className="px-4 py-2 bg-transparent border border-white rounded-md text-white hover:bg-white hover:text-slate-800 transition-colors duration-300 shadow-md hover:shadow-lg">
                     Login
                 </button>
-                <button className="px-4 py-2 bg-blue-600 rounded-md hover:bg-blue-500 transition duration-200">
+                <button className="px-4 py-2 bg-blue-600 rounded-md text-white hover:bg-blue-500 transition-colors duration-300 shadow-md hover:shadow-lg">
                     Sign Up
                 </button>
                 <div className="relative">
