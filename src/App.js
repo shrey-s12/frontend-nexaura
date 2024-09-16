@@ -9,8 +9,6 @@ import LoginSignup from "./components/pages/LoginSignup";
 import Product from "./components/pages/Product";
 import Footer from "./components/Footer/Footer";
 
-
-
 function App() {
   return (
     <Router>
