@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router , Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import Shop from "./components/pages/Shop";
-import ShopCategory from "./components/pages/ShopCategory";
-import Contact from "./components/pages/Contact";
-import Cart from "./components/pages/Cart";
-import LoginSignup from "./components/pages/LoginSignup";
-import Product from "./components/pages/Product";
+import Shop from "./pages/Shop";
+import ShopCategory from "./pages/ShopCategory";
+import Contact from "./pages/Contact";
+import Cart from "./pages/Cart";
+import LoginSignup from "./pages/LoginSignup";
+import Product from "./pages/Product";
 import Footer from "./components/Footer/Footer";
 
 function App() {
