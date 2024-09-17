@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';  // Import NavLink
+import { Link, NavLink } from 'react-router-dom';  // Import NavLink
 import logo from '../Assets/navbar/logo.png';
 import cart_logo from '../Assets/navbar/cart_icon.png';
 
@@ -109,7 +109,7 @@ const Navbar = () => {
                     Login
                 </button>
                 <button className="px-4 py-2 bg-blue-600 rounded-md text-white hover:bg-blue-500 transition-colors duration-300 shadow-md hover:shadow-lg">
-                    Sign Up
+                   <Link to="/signup">Sign Up</Link> 
                 </button>
                 <div className="relative">
                     <img src={cart_logo} alt="Cart Logo" className="h-8 w-8 filter invert" />
